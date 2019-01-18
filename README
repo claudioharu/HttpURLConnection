@@ -62,11 +62,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 # HttpURLConnection 
 
-HttpURLConnection é uma forma simples de realizar requisições http com c/c++ em sistemas windows.
+HttpURLConnection Ã© uma forma simples de realizar requisiÃ§Ãµes http com c/c++ em sistemas windows.
 
 ## Usage
 
-Simples exemplo de como realizar uma requisição http
+Simples exemplo de como realizar uma requisiÃ§Ã£o http
 
 ```c
 #include "HttpURLConnection.h"
@@ -105,7 +105,7 @@ HttpURLConnection::getFree(httpURLConnection);
 
 ```
 ## Todos
- - Implementação de testes.
+ - ImplementaÃ§Ã£o de testes.
  - Realizar o parsing da resposa.
 
 ## Requirements
@@ -114,7 +114,7 @@ HttpURLConnection::getFree(httpURLConnection);
  - winsock2.
  
 ## Contributing
-Pull requests são bem vindos. Para maiores alterações, por favor abra uma issue para discutirmos a mudança.
+Pull requests sÃ£o bem vindos. Para maiores alteraÃ§Ãµes, por favor abra uma issue para discutirmos a mudanÃ§a.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
