@@ -1,0 +1,120 @@
+# HttpURLConnection 
+
+HttpURLConnection is a simple way to make http requests with c/c++ in windows systems.
+
+## Usage
+
+Simple example of doing a httpRequest
+
+```c
+#include "HttpURLConnection.h"
+
+
+// GET Example
+HttpURLConnection& httpURLConnection =
+                    HttpURLConnection::getInstance()
+                    .clearRequestProperty()
+                    .setIp("127.0.0.1")
+                    .setPort(80)
+                    .setRequestMethod("GET")
+                    .setPath("/token/gerar")
+                    .setRequestProperty("Host", "127.0.0.1")
+                    .setRequestProperty("Connection", "close");
+
+cout << httpURLConnection.getResponse() << endl;
+
+httpURLConnection.closeConnection();
+
+// POST Example
+httpURLConnection
+         .clearRequestProperty()
+         .setIp("127.0.0.1")
+         .setPort(80)
+         .setRequestMethod("POST")
+         .setPath("/entidades/processamento/processarEventos")
+         .setRequestProperty("Host", "127.0.0.1")
+         .setRequestProperty("User-Agent", "C builder Client")
+         .setRequestProperty("Authorization", "eyJhbGciOiJIUzUxMiJ9")
+         .setRequestProperty("Connection", "close");
+                 
+cout << httpURLConnection.getResponse() << endl;
+
+HttpURLConnection::getFree(httpURLConnection);
+
+```
+## Todos
+ - Write tests.
+ - Parse the response
+
+## Requirements
+
+ - Windows plataform.
+ - winsock2.
+ 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+####
+
+# HttpURLConnection 
+
+HttpURLConnection é uma forma simples de realizar requisições http com c/c++ em sistemas windows.
+
+## Usage
+
+Simples exemplo de como realizar uma requisição http
+
+```c
+#include "HttpURLConnection.h"
+
+
+// Exemplo GET
+HttpURLConnection& httpURLConnection =
+                    HttpURLConnection::getInstance()
+                    .clearRequestProperty()
+                    .setIp("127.0.0.1")
+                    .setPort(80)
+                    .setRequestMethod("GET")
+                    .setPath("/token/gerar")
+                    .setRequestProperty("Host", "127.0.0.1")
+                    .setRequestProperty("Connection", "close");
+
+cout << httpURLConnection.getResponse() << endl;
+
+httpURLConnection.closeConnection();
+
+// Exemplo POST
+httpURLConnection
+         .clearRequestProperty()
+         .setIp("127.0.0.1")
+         .setPort(80)
+         .setRequestMethod("POST")
+         .setPath("/entidades/processamento/processarEventos")
+         .setRequestProperty("Host", "127.0.0.1")
+         .setRequestProperty("User-Agent", "C builder Client")
+         .setRequestProperty("Authorization", "eyJhbGciOiJIUzUxMiJ9")
+         .setRequestProperty("Connection", "close");
+                 
+cout << httpURLConnection.getResponse() << endl;
+
+HttpURLConnection::getFree(httpURLConnection);
+
+```
+## Todos
+ - Implementação de testes.
+ - Realizar o parsing da resposa.
+
+## Requirements
+
+ - Plataforma Windows.
+ - winsock2.
+ 
+## Contributing
+Pull requests são bem vindos. Para maiores alterações, por favor abra uma issue para discutirmos a mudança.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
