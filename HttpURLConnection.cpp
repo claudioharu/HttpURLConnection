@@ -10,6 +10,10 @@ HttpURLConnection::HttpURLConnection()
 {
     family  = AF_INET;
     version = "1.1";
+    port = 80;
+
+    RequestProperty* requestProperty = new RequestProperty("Connection", "close");
+    this->requestProperty.push_back(requestProperty);
 }
 //---------------------------------------------------------------------------
 
@@ -201,3 +205,31 @@ string HttpURLConnection::getResponse(void)
 }
 //---------------------------------------------------------------------------
 
+string HttpURLConnection::getStatus(void)
+{
+    string response (server_reply);
+    string delimiter = "HTTP/1.1";
+    string token = response.substr(response.find(delimiter), response.find(delimiter) + delimiter.length()  + 4);
+
+    vector<string> vector;
+    split(vector, " ", token);
+    status = vector[1];
+    vector.clear();
+
+    return status;
+}
+//---------------------------------------------------------------------------
+
+void HttpURLConnection::split(vector<string>& vector, string delimiter, string str)
+{
+
+    string token;
+    size_t pos = 0;
+    while ((pos = str.find(delimiter)) != std::string::npos) {
+        token = str.substr(0, pos);
+        vector.push_back(token);
+        cout << token  << endl;
+        str.erase(0, pos + delimiter.length());
+    }
+    vector.push_back(str);
+}

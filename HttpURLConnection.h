@@ -8,6 +8,7 @@
 #include<winsock2.h>
 #include <iostream>
 #include <vector.h>
+#include <string>
 #include "RequestProperty.h"
 #include "HttpURLConnectionException.h"
 
@@ -55,6 +56,7 @@ private:
     string requestMethod;
     string ip;
     string version;
+    string status;
     vector<RequestProperty*> requestProperty;
 
     void createSocket(void);
@@ -63,6 +65,7 @@ private:
 
     string getMessage(void);
 
+    void split(vector<string>& vector, string delimiter, string str);
 
 public:
 
@@ -78,6 +81,8 @@ public:
     HttpURLConnection& setRequestProperty(string key, string value);
     HttpURLConnection& setVersion(string version);
     HttpURLConnection& HttpURLConnection::clearRequestProperty(void);
+
+    string getStatus(void);
 
     string getResponse(void);
 
